@@ -8,7 +8,7 @@ export const LESSONS = {
   discreteMathematics: 'Дискретна математика',
   basicsOfPhilosophy: 'Основи філософії',
   softwareDesign: 'Конструювання програмного забезпечення ',
-  differentialEquations: 'диференціальні рівняння',
+  differentialEquations: 'Диференціальні рівняння',
 };
 
 const LESSON_NUMBER = {
