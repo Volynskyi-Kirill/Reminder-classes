@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { CLASSES_SCHEDULE } from '../helpers/constants';
 import { TelegramService } from './telegram.service';
 import {
-  buildMessage,
+  buildNotificationClassMessage,
   generateUniqueJobName,
   getCronExpressionForLesson,
 } from '../helpers/utils';
@@ -31,7 +31,7 @@ export class ScheduleService {
           const job = new CronJob(
             cronExpression,
             () => {
-              const text = buildMessage(
+              const text = buildNotificationClassMessage(
                 lesson.lessonName,
                 lesson.link ?? 'посилання невідоме',
               );

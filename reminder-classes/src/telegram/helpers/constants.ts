@@ -8,23 +8,23 @@ export const LESSONS = {
   discreteMathematics: 'Дискретна математика',
   basicsOfPhilosophy: 'Основи філософії',
   softwareDesign: 'Конструювання програмного забезпечення ',
-  differentialEquations: 'диференціальні рівняння',
+  differentialEquations: 'Диференціальні рівняння',
 };
 
 const LESSON_NUMBER = {
-  1: '8:30-9:50',
-  2: '10:00-11:20',
-  3: '11:30-12:50',
-  4: '13:20-14:40',
-  5: '14:50-16:10',
+  1: '08:30 - 09:50',
+  2: '10:00 - 11:20',
+  3: '11:30 - 12:50',
+  4: '13:20 - 14:40',
+  5: '14:50-  16:10',
 };
 
-const STUDY_DAYS = {
-  MONDAY: 'Monday',
-  TUESDAY: 'Tuesday',
-  WEDNESDAY: 'Wednesday',
-  THURSDAY: 'Thursday',
-  FRIDAY: 'Friday',
+export const STUDY_DAYS = {
+  MONDAY: 'monday',
+  TUESDAY: 'tuesday',
+  WEDNESDAY: 'wednesday',
+  THURSDAY: 'thursday',
+  FRIDAY: 'friday',
 };
 
 export const LESSON_DETAILS = {
@@ -97,4 +97,10 @@ export const CLASSES_SCHEDULE = {
     [LESSON_NUMBER[2]]: LESSON_DETAILS.basicsOfPhilosophy,
     [LESSON_NUMBER[3]]: LESSON_DETAILS.numericalMethods,
   },
+};
+
+export const SCHEDULE_COMMANDS = {
+  TODAY: 'today',
+  TOMORROW: 'tomorrow',
+  ...STUDY_DAYS,
 };
