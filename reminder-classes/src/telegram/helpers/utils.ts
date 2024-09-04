@@ -52,5 +52,5 @@ export function getCronExpressionForLesson(day: string, time: string): string {
 }
 
 export function buildMessage(lessonName: string, link: string) {
-  return `Reminder: ${lessonName} starts in 2 minutes! \nLink: ${link}`;
+  return `Нагадування: ${lessonName} починається за 2 хвилини! \nПосилання: ${link}`;
 }

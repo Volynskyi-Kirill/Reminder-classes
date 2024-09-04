@@ -28,16 +28,23 @@ export class ScheduleService {
         if (lesson) {
           const cronExpression = getCronExpressionForLesson(day, time);
           const jobName = generateUniqueJobName(lesson.lessonName, day, time);
-          const job = new CronJob(cronExpression, () => {
-            const text = buildMessage(
-              lesson.lessonName,
-              lesson.link ?? 'посилання невідоме',
-            );
-            this.telegramService.sendMessage({
-              chatId: this.studyChatId,
-              text,
-            });
-          });
+          const job = new CronJob(
+            cronExpression,
+            () => {
+              const text = buildMessage(
+                lesson.lessonName,
+                lesson.link ?? 'посилання невідоме',
+              );
+              console.log('text: ', text);
+              this.telegramService.sendMessage({
+                chatId: this.studyChatId,
+                text,
+              });
+            },
+            null,
+            false,
+            'Europe/Kiev',
+          );
           this.schedulerRegistry.addCronJob(jobName, job);
           job.start();
         }

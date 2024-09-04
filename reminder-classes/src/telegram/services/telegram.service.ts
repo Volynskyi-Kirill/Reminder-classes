@@ -23,6 +23,7 @@ export class TelegramService {
     reply_to_message_id,
   }: ISendMessage) {
     try {
+      console.log('chatId: ', chatId);
       return await this.bot.sendMessage(chatId, text, {
         message_thread_id: topicId,
         reply_markup,
