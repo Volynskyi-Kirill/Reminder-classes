@@ -47,7 +47,6 @@ export function generateUniqueJobName(
 
 export function getCronExpressionForLesson(day: string, time: string): string {
   const dayOfWeek = getDayOfWeek(day);
-  console.log(`day: ${day}, dayOfWeek: ${dayOfWeek}`);
   const [hour, minute] = time.split('-')[0].split(':').map(Number);
   const reminderTime = addMinutes(new Date(0, 0, 0, hour, minute), -2);
   const cronExpression = `${format(reminderTime, 'm')} ${format(reminderTime, 'H')} * * ${dayOfWeek}`;

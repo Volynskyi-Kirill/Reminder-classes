@@ -27,7 +27,6 @@ export class ScheduleService {
         const lesson = CLASSES_SCHEDULE[day][time];
         if (lesson) {
           const cronExpression = getCronExpressionForLesson(day, time);
-          console.log('cronExpression: ', cronExpression);
           const jobName = generateUniqueJobName(lesson.lessonName, day, time);
           const job = new CronJob(
             cronExpression,
