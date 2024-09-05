@@ -16,7 +16,7 @@ const LESSON_NUMBER = {
   2: '10:00 - 11:20',
   3: '11:30 - 12:50',
   4: '13:20 - 14:40',
-  5: '14:50-  16:10',
+  5: '14:50 - 16:10',
 };
 
 export const STUDY_DAYS = {
@@ -87,7 +87,7 @@ export const CLASSES_SCHEDULE = {
   },
   [STUDY_DAYS.THURSDAY]: {
     [LESSON_NUMBER[1]]: isNowNumeratorWeek()
-      ? LESSON_DETAILS.discreteMathematics
+      ? LESSON_DETAILS.discreteMathematics //TODO если дискретная первая пара, то она начинается в 9
       : LESSON_DETAILS.visualProgrammingTools,
     [LESSON_NUMBER[2]]: LESSON_DETAILS.differentialEquations,
     [LESSON_NUMBER[3]]: LESSON_DETAILS.computerNetworksOrganization,

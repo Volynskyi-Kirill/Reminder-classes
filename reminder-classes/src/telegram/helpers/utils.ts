@@ -22,15 +22,15 @@ export function isNowNumeratorWeek() {
 
 export function getDayOfWeek(day: string): number {
   switch (day) {
-    case 'Monday':
+    case STUDY_DAYS.MONDAY:
       return 1;
-    case 'Tuesday':
+    case STUDY_DAYS.TUESDAY:
       return 2;
-    case 'Wednesday':
+    case STUDY_DAYS.WEDNESDAY:
       return 3;
-    case 'Thursday':
+    case STUDY_DAYS.THURSDAY:
       return 4;
-    case 'Friday':
+    case STUDY_DAYS.FRIDAY:
       return 5;
     default:
       return 0;
@@ -47,6 +47,7 @@ export function generateUniqueJobName(
 
 export function getCronExpressionForLesson(day: string, time: string): string {
   const dayOfWeek = getDayOfWeek(day);
+  console.log(`day: ${day}, dayOfWeek: ${dayOfWeek}`);
   const [hour, minute] = time.split('-')[0].split(':').map(Number);
   const reminderTime = addMinutes(new Date(0, 0, 0, hour, minute), -2);
   const cronExpression = `${format(reminderTime, 'm')} ${format(reminderTime, 'H')} * * ${dayOfWeek}`;

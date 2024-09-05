@@ -27,6 +27,7 @@ export class ScheduleService {
         const lesson = CLASSES_SCHEDULE[day][time];
         if (lesson) {
           const cronExpression = getCronExpressionForLesson(day, time);
+          console.log('cronExpression: ', cronExpression);
           const jobName = generateUniqueJobName(lesson.lessonName, day, time);
           const job = new CronJob(
             cronExpression,
@@ -50,5 +51,13 @@ export class ScheduleService {
         }
       }
     }
+    this.getAllCronJobs()
+  }
+
+  getAllCronJobs() {
+    const jobs = this.schedulerRegistry.getCronJobs();
+    jobs.forEach((value, key) => {
+      console.log(`Job: ${key} -> Next execution: ${value.nextDates()}`);
+    });
   }
 }
