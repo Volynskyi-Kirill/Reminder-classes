@@ -101,3 +101,25 @@ export function getScheduleByDay(day: string) {
     })
     .join('\n');
 }
+
+export function formatTeachersList(
+  teachersArray: {
+    subject: string;
+    name: string;
+  }[],
+) {
+  return teachersArray
+    .map((teacher) => `${teacher.subject} - ${teacher.name}`)
+    .join('\n');
+}
+
+interface LessonNumbers {
+  [key: string]: string;
+}
+
+export function formatLessonSchedule(lessonNumbers: LessonNumbers) {
+  return Object.entries(lessonNumbers)
+  .filter(([lesson]) => lesson !== 'firstAtNine') 
+  .map(([lesson, time]) => `${lesson}: ${time}`)
+  .join('\n');
+}
