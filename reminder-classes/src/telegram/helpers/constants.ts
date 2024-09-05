@@ -11,12 +11,46 @@ export const LESSONS = {
   differentialEquations: 'Диференціальні рівняння',
 };
 
-const LESSON_NUMBER = {
+export const TEACHERS_LIST = {
+  curator: 'Сайко Тетяна Сергіївна',
+  physicalEducation: 'Левіна Наталія Семенівна',
+  numericalMethods: 'Ланська Світлана Сергіївна',
+  philosophy: 'Шилова Наталія А.',
+  oop: 'Гапоненко Наталія Володимирівна',
+  differentialEquations: 'Буряк Генадий Иванович',
+  computerNetworks: 'Блат Ольга Леонидовна',
+  java: 'Антоненко Світлана Валентинівна',
+  discreteMathematics: 'Феоктистова Людмила Адамовна',
+};
+
+export const TEACHERS_ARRAY = [
+  { subject: 'Куратор', name: TEACHERS_LIST.curator },
+  { subject: LESSONS.physicalEducation, name: TEACHERS_LIST.physicalEducation },
+  {
+    subject: LESSONS.computerNetworksOrganization,
+    name: TEACHERS_LIST.computerNetworks,
+  },
+  { subject: LESSONS.numericalMethods, name: TEACHERS_LIST.numericalMethods },
+  {
+    subject: LESSONS.discreteMathematics,
+    name: TEACHERS_LIST.discreteMathematics,
+  },
+  { subject: LESSONS.basicsOfPhilosophy, name: TEACHERS_LIST.philosophy },
+  { subject: LESSONS.visualProgrammingTools, name: TEACHERS_LIST.oop },
+  {
+    subject: LESSONS.differentialEquations,
+    name: TEACHERS_LIST.differentialEquations,
+  },
+  { subject: 'Java', name: TEACHERS_LIST.java },
+];
+
+export const LESSON_NUMBER = {
   1: '08:30 - 09:50',
   2: '10:00 - 11:20',
   3: '11:30 - 12:50',
   4: '13:20 - 14:40',
   5: '14:50 - 16:10',
+  firstAtNine: '09:00 - 09:50',
 };
 
 export const STUDY_DAYS = {
@@ -58,7 +92,7 @@ export const LESSON_DETAILS = {
   },
   differentialEquations: {
     lessonName: LESSONS.differentialEquations,
-    link: null,
+    link: null, //TODO посилання на четверг та п'ятницю
   },
 };
 
@@ -86,9 +120,11 @@ export const CLASSES_SCHEDULE = {
     [LESSON_NUMBER[4]]: LESSON_DETAILS.softwareDesign,
   },
   [STUDY_DAYS.THURSDAY]: {
-    [LESSON_NUMBER[1]]: isNowNumeratorWeek()
-      ? LESSON_DETAILS.discreteMathematics //TODO если дискретная первая пара, то она начинается в 9
-      : LESSON_DETAILS.visualProgrammingTools,
+    [isNowNumeratorWeek() && LESSON_DETAILS.discreteMathematics
+      ? LESSON_NUMBER.firstAtNine
+      : LESSON_NUMBER[1]]: isNowNumeratorWeek()
+      ? LESSON_DETAILS.discreteMathematics
+      : LESSON_DETAILS.visualProgrammingTools, // если дискретная первая пара, то она начинается в 9
     [LESSON_NUMBER[2]]: LESSON_DETAILS.differentialEquations,
     [LESSON_NUMBER[3]]: LESSON_DETAILS.computerNetworksOrganization,
   },

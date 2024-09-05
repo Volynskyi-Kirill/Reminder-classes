@@ -1,10 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as TelegramBot from 'node-telegram-bot-api';
-import { SCHEDULE_COMMANDS } from './helpers/constants';
+import {
+  LESSON_NUMBER,
+  SCHEDULE_COMMANDS,
+  TEACHERS_ARRAY,
+} from './helpers/constants';
 import {
   buildScheduleAvailableCommands,
+  formatLessonSchedule,
+  formatTeachersList,
   getScheduleByDay,
+  isNowNumeratorWeek,
 } from './helpers/utils';
 import { TelegramService } from './services/telegram.service';
 
@@ -39,6 +46,16 @@ export class PollingService {
       this.sendScheduleCommands(msg.chat.id),
     );
 
+    this.bot.onText(/\/what_week/, (msg) => this.sendTypeOfWeek(msg.chat.id));
+
+    this.bot.onText(/\/all_teachers/, (msg) =>
+      this.sendAllTeachers(msg.chat.id),
+    );
+
+    this.bot.onText(/\/lesson_schedule/, (msg) =>
+      this.sendLessonSchedule(msg.chat.id),
+    );
+
     this.bot.onText(/\/help/, (msg) => this.sendHelp(msg.chat.id));
 
     this.bot.on('message', (msg) => this.onMessage(msg));
@@ -66,8 +83,37 @@ export class PollingService {
     });
   }
 
+  private async sendTypeOfWeek(chatId: number) {
+    const isNowNumeral = isNowNumeratorWeek();
+    const text = isNowNumeral ? 'Чисельник' : 'Знаменник';
+
+    await this.telegramService.sendMessage({
+      chatId,
+      text,
+    });
+  }
+
+  private async sendAllTeachers(chatId: number) {
+    const teachersList = formatTeachersList(TEACHERS_ARRAY);
+
+    await this.telegramService.sendMessage({
+      chatId,
+      text: teachersList,
+    });
+  }
+
+  private async sendLessonSchedule(chatId: number) {
+    const lessonSchedule = formatLessonSchedule(LESSON_NUMBER);
+
+    await this.telegramService.sendMessage({
+      chatId,
+      text: lessonSchedule,
+    });
+  }
+
   private async sendHelp(chatId: number) {
-    const availableCommands = '/schedule_commands';
+    const availableCommands =
+      '/schedule_commands \n/what_week (чисельник чи знаменник) \n/all_teachers \n/lesson_schedule';
     await this.telegramService.sendMessage({
       chatId,
       text: availableCommands,
