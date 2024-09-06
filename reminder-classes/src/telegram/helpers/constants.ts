@@ -84,7 +84,7 @@ export const LESSON_DETAILS = {
   },
   basicsOfPhilosophy: {
     lessonName: LESSONS.basicsOfPhilosophy,
-    link: null, //TODO посилання
+    link: 'https://meet.google.com/krn-fjsp-vkz',
   },
   softwareDesign: {
     lessonName: LESSONS.softwareDesign,
@@ -92,11 +92,11 @@ export const LESSON_DETAILS = {
   },
   differentialEquationsThursday: {
     lessonName: LESSONS.differentialEquations,
-    link: null, //TODO посилання на четверг
+    link: 'https://meet.google.com/cnf-tsdr-bny',
   },
   differentialEquationsFriday: {
     lessonName: LESSONS.differentialEquations,
-    link: null, //TODO посилання на п'ятницю
+    link: 'https://meet.google.com/chh-vvnp-bre',
   },
 };
 
