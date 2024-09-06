@@ -92,6 +92,8 @@ export function getScheduleByDay(day: string) {
   const resolvedDay = getDayForSchedule(day);
   const schedule = CLASSES_SCHEDULE[resolvedDay];
 
+  if (!schedule) return 'Вихідний';
+
   return Object.entries(schedule)
     .map(([time, lesson]) => {
       const lessonName =
@@ -119,7 +121,7 @@ interface LessonNumbers {
 
 export function formatLessonSchedule(lessonNumbers: LessonNumbers) {
   return Object.entries(lessonNumbers)
-  .filter(([lesson]) => lesson !== 'firstAtNine') 
-  .map(([lesson, time]) => `${lesson}: ${time}`)
-  .join('\n');
+    .filter(([lesson]) => lesson !== 'firstAtNine')
+    .map(([lesson, time]) => `${lesson}: ${time}`)
+    .join('\n');
 }
