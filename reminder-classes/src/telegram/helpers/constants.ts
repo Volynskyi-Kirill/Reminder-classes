@@ -64,7 +64,7 @@ export const STUDY_DAYS = {
 export const LESSON_DETAILS = {
   physicalEducation: {
     lessonName: LESSONS.physicalEducation,
-    link: 'https://meet.google.com/vmd-ekaa-qrh',
+    link: 'https://meet.google.com/oup-imjf-cap',
   },
   computerNetworksOrganization: {
     lessonName: LESSONS.computerNetworksOrganization,
