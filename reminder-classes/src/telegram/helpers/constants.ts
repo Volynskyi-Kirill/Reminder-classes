@@ -4,10 +4,12 @@ export const LESSONS = {
   enterpriseEconomics: 'Економіка підприємства',
   projectPractice: 'Проєктний практикум',
   probabilityAndStatistics: 'Теорія ймовірності та математична статистика',
-  automatedEconomicInfoProcessingTech: 'ТАОЕІ',
+  automatedEconomicInfoProcessingTech:
+    'ТАОЕІ (Технологія автоматизованої обробки економічної інформації)',
   computerGraphicsAnimation: 'Комп’ютерна графіка та анімація',
   groupDynamicsCommunication: 'Групова динамика і комунікації',
-  automatedInfoProcessingSystems: 'САОІ',
+  automatedInfoProcessingSystems:
+    'САОІ (Системи автоматизованої обробки інформації)',
   webTechnologies: 'Веб-технології',
 };
 
