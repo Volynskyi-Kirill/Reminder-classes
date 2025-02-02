@@ -8,7 +8,7 @@ import {
 import { CLASSES_SCHEDULE, SCHEDULE_COMMANDS, STUDY_DAYS } from './constants';
 
 export function isNowNumeratorWeek() {
-  const firstNumeratorWeekStart = new Date(2024, 8, 2);
+  const firstNumeratorWeekStart = new Date(2025, 2, 3);
   const currentWeekStart = startOfWeek(new Date(), { weekStartsOn: 1 });
 
   const weekDifference = differenceInCalendarWeeks(
