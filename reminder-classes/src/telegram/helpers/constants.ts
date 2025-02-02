@@ -1,56 +1,60 @@
 import { isNowNumeratorWeek } from './utils';
 
 export const LESSONS = {
-  physicalEducation: 'Фізичне виховання',
-  computerNetworksOrganization: "Організація комп'ютерних мереж",
-  visualProgrammingTools: 'ІЗВП',
-  numericalMethods: 'Чисельні методи',
-  discreteMathematics: 'Дискретна математика',
-  basicsOfPhilosophy: 'Основи філософії',
-  softwareDesign: 'Конструювання програмного забезпечення ',
-  differentialEquations: 'Диференціальні рівняння',
+  enterpriseEconomics: 'Економіка підприємства',
+  projectPractice: 'Проєктний практикум',
+  probabilityAndStatistics: 'Теорія ймовірності та математична статистика',
+  automatedEconomicInfoProcessingTech: 'ТАОЕІ',
+  computerGraphicsAnimation: 'Комп’ютерна графіка та анімація',
+  groupDynamicsCommunication: 'Групова динамика і комунікації',
+  automatedInfoProcessingSystems: 'САОІ',
+  webTechnologies: 'Веб-технології',
 };
 
 export const TEACHERS_LIST = {
-  curator: 'Сайко Тетяна Сергіївна',
-  physicalEducation: 'Левіна Наталія Семенівна',
-  numericalMethods: 'Ланська Світлана Сергіївна',
-  philosophy: 'Шилова Наталія А.',
-  oop: 'Гапоненко Наталія Володимирівна',
-  differentialEquations: 'Буряк Генадий Иванович',
-  computerNetworks: 'Блат Ольга Леонидовна',
-  java: 'Антоненко Світлана Валентинівна',
-  discreteMathematics: 'Феоктистова Людмила Адамовна',
+  enterpriseEconomics: 'Болваненко',
+  projectPractice: 'Лазарева',
+  probabilityAndStatistics: 'Ткаченко',
+  automatedEconomicInfoProcessingTech: 'Мандрика',
+  computerGraphicsAnimation: 'Лазарева',
+  groupDynamicsCommunication: 'Мандрика',
+  automatedInfoProcessingSystems: 'Мандрика',
+  webTechnologies: 'Невідомо',
 };
 
 export const TEACHERS_ARRAY = [
-  { subject: 'Куратор', name: TEACHERS_LIST.curator },
-  { subject: LESSONS.physicalEducation, name: TEACHERS_LIST.physicalEducation },
   {
-    subject: LESSONS.computerNetworksOrganization,
-    name: TEACHERS_LIST.computerNetworks,
+    subject: LESSONS.enterpriseEconomics,
+    name: TEACHERS_LIST.enterpriseEconomics,
   },
-  { subject: LESSONS.numericalMethods, name: TEACHERS_LIST.numericalMethods },
+  { subject: LESSONS.projectPractice, name: TEACHERS_LIST.projectPractice },
   {
-    subject: LESSONS.discreteMathematics,
-    name: TEACHERS_LIST.discreteMathematics,
+    subject: LESSONS.probabilityAndStatistics,
+    name: TEACHERS_LIST.probabilityAndStatistics,
   },
-  { subject: LESSONS.basicsOfPhilosophy, name: TEACHERS_LIST.philosophy },
-  { subject: LESSONS.visualProgrammingTools, name: TEACHERS_LIST.oop },
   {
-    subject: LESSONS.differentialEquations,
-    name: TEACHERS_LIST.differentialEquations,
+    subject: LESSONS.automatedEconomicInfoProcessingTech,
+    name: TEACHERS_LIST.automatedEconomicInfoProcessingTech,
   },
-  { subject: 'Java', name: TEACHERS_LIST.java },
+  {
+    subject: LESSONS.computerGraphicsAnimation,
+    name: TEACHERS_LIST.computerGraphicsAnimation,
+  },
+  {
+    subject: LESSONS.groupDynamicsCommunication,
+    name: TEACHERS_LIST.groupDynamicsCommunication,
+  },
+  {
+    subject: LESSONS.automatedInfoProcessingSystems,
+    name: TEACHERS_LIST.automatedInfoProcessingSystems,
+  },
+  { subject: LESSONS.webTechnologies, name: TEACHERS_LIST.webTechnologies },
 ];
 
 export const LESSON_NUMBER = {
   1: '08:30 - 09:50',
   2: '10:00 - 11:20',
   3: '11:30 - 12:50',
-  4: '13:20 - 14:40',
-  5: '14:50 - 16:10',
-  firstAtNine: '09:00 - 09:50',
 };
 
 export const STUDY_DAYS = {
@@ -62,80 +66,71 @@ export const STUDY_DAYS = {
 };
 
 export const LESSON_DETAILS = {
-  physicalEducation: {
-    lessonName: LESSONS.physicalEducation,
-    link: 'https://meet.google.com/oup-imjf-cap',
+  enterpriseEconomics: {
+    lessonName: LESSONS.enterpriseEconomics,
+    link: 'https://us05web.zoom.us/j/9978212434?pwd=UEtYeHVSUUNqNVhzeFJNcVdrQlkrZz09',
   },
-  computerNetworksOrganization: {
-    lessonName: LESSONS.computerNetworksOrganization,
+  projectPractice: {
+    lessonName: LESSONS.projectPractice,
+    link: 'https://meet.google.com/pbq-huap-teu',
+  },
+  probabilityAndStatistics: {
+    lessonName: LESSONS.probabilityAndStatistics,
+    link: 'https://meet.google.com/vyd-aifj-cjf',
+  },
+  automatedEconomicInfoProcessingTech: {
+    lessonName: LESSONS.automatedEconomicInfoProcessingTech,
+    link: 'https://meet.google.com/kys-woqb-ksv',
+  },
+  computerGraphicsAnimation: {
+    lessonName: LESSONS.computerGraphicsAnimation,
+    link: 'https://meet.google.com/pbq-huap-teu',
+  },
+  groupDynamicsCommunication: {
+    lessonName: LESSONS.groupDynamicsCommunication,
+    link: 'https://meet.google.com/kys-woqb-ksv',
+  },
+  automatedInfoProcessingSystems: {
+    lessonName: LESSONS.automatedInfoProcessingSystems,
+    link: 'https://meet.google.com/kys-woqb-ksv',
+  },
+  webTechnologies: {
+    lessonName: LESSONS.webTechnologies,
     link: 'https://meet.google.com/csv-aqog-zsu',
-  },
-  visualProgrammingTools: {
-    lessonName: LESSONS.visualProgrammingTools,
-    link: 'https://meet.google.com/vak-amkg-nyt',
-  },
-  numericalMethods: {
-    lessonName: LESSONS.numericalMethods,
-    link: 'https://meet.google.com/wvv-hpzu-ugu',
-  },
-  discreteMathematics: {
-    lessonName: LESSONS.discreteMathematics,
-    link: 'https://meet.google.com/ano-xcmt-bbd',
-  },
-  basicsOfPhilosophy: {
-    lessonName: LESSONS.basicsOfPhilosophy,
-    link: 'https://meet.google.com/krn-fjsp-vkz',
-  },
-  softwareDesign: {
-    lessonName: LESSONS.softwareDesign,
-    link: 'https://meet.google.com/hug-seik-dbv',
-  },
-  differentialEquationsThursday: {
-    lessonName: LESSONS.differentialEquations,
-    link: 'https://meet.google.com/cnf-tsdr-bny',
-  },
-  differentialEquationsFriday: {
-    lessonName: LESSONS.differentialEquations,
-    link: 'https://meet.google.com/chh-vvnp-bre',
   },
 };
 
 export const CLASSES_SCHEDULE = {
   [STUDY_DAYS.MONDAY]: {
-    [LESSON_NUMBER[1]]: LESSON_DETAILS.physicalEducation,
-    [LESSON_NUMBER[2]]: LESSON_DETAILS.visualProgrammingTools,
-    [LESSON_NUMBER[3]]: LESSON_DETAILS.computerNetworksOrganization,
-    [LESSON_NUMBER[4]]: LESSON_DETAILS.softwareDesign,
+    [LESSON_NUMBER[1]]: isNowNumeratorWeek()
+      ? LESSON_DETAILS.enterpriseEconomics
+      : LESSON_DETAILS.groupDynamicsCommunication,
+    [LESSON_NUMBER[2]]: isNowNumeratorWeek()
+      ? LESSON_DETAILS.projectPractice
+      : LESSON_DETAILS.probabilityAndStatistics,
+    [LESSON_NUMBER[3]]: LESSON_DETAILS.automatedInfoProcessingSystems,
   },
   [STUDY_DAYS.TUESDAY]: {
-    [LESSON_NUMBER[1]]: isNowNumeratorWeek()
-      ? LESSON_DETAILS.numericalMethods
-      : null,
-    [LESSON_NUMBER[2]]: LESSON_DETAILS.discreteMathematics,
-    [LESSON_NUMBER[3]]: LESSON_DETAILS.visualProgrammingTools,
-    [LESSON_NUMBER[4]]: isNowNumeratorWeek()
-      ? null
-      : LESSON_DETAILS.basicsOfPhilosophy,
+    [LESSON_NUMBER[1]]: LESSON_DETAILS.automatedEconomicInfoProcessingTech,
+    [LESSON_NUMBER[2]]: LESSON_DETAILS.computerGraphicsAnimation,
+    [LESSON_NUMBER[3]]: LESSON_DETAILS.groupDynamicsCommunication,
   },
   [STUDY_DAYS.WEDNESDAY]: {
-    [LESSON_NUMBER[1]]: null,
-    [LESSON_NUMBER[2]]: LESSON_DETAILS.discreteMathematics,
-    [LESSON_NUMBER[3]]: LESSON_DETAILS.physicalEducation,
-    [LESSON_NUMBER[4]]: LESSON_DETAILS.softwareDesign,
+    [LESSON_NUMBER[1]]: LESSON_DETAILS.probabilityAndStatistics,
+    [LESSON_NUMBER[2]]: LESSON_DETAILS.webTechnologies,
+    [LESSON_NUMBER[3]]: LESSON_DETAILS.projectPractice,
   },
   [STUDY_DAYS.THURSDAY]: {
-    [isNowNumeratorWeek() && LESSON_DETAILS.discreteMathematics
-      ? LESSON_NUMBER.firstAtNine
-      : LESSON_NUMBER[1]]: isNowNumeratorWeek()
-      ? LESSON_DETAILS.discreteMathematics
-      : LESSON_DETAILS.visualProgrammingTools, // если дискретная первая пара, то она начинается в 9
-    [LESSON_NUMBER[2]]: LESSON_DETAILS.differentialEquationsThursday,
-    [LESSON_NUMBER[3]]: LESSON_DETAILS.computerNetworksOrganization,
+    [LESSON_NUMBER[1]]: isNowNumeratorWeek()
+      ? LESSON_DETAILS.automatedInfoProcessingSystems
+      : LESSON_DETAILS.automatedEconomicInfoProcessingTech,
+    [LESSON_NUMBER[2]]: LESSON_DETAILS.enterpriseEconomics,
+    [LESSON_NUMBER[3]]: LESSON_DETAILS.computerGraphicsAnimation,
   },
   [STUDY_DAYS.FRIDAY]: {
-    [LESSON_NUMBER[1]]: LESSON_DETAILS.differentialEquationsFriday,
-    [LESSON_NUMBER[2]]: LESSON_DETAILS.basicsOfPhilosophy,
-    [LESSON_NUMBER[3]]: LESSON_DETAILS.numericalMethods,
+    [LESSON_NUMBER[1]]: LESSON_DETAILS.probabilityAndStatistics,
+    [LESSON_NUMBER[2]]: LESSON_DETAILS.webTechnologies,
+    [LESSON_NUMBER[3]]: LESSON_DETAILS.computerGraphicsAnimation,
   },
 };
 
